@@ -14,7 +14,7 @@ export default function Users() {
     <>
       <h1>Users: {users.length}</h1>
 
-      <div className="flex flex-wrap gap-5 mt-5 justify-center item-center">
+      <div className="flex flex-wrap gap-5 mt-5 mb-5 justify-center item-center">
         {users.map((user) => (
           <User user={user}></User>
         ))}
