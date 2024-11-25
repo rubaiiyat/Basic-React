@@ -1,9 +1,8 @@
 import { useState } from "react";
 
-const Country = ({ country }) => {
+const Country = ({ country, handleVisitedCountry }) => {
   const { name, flags, population } = country;
 
-  const [addVisited, setAddVisited] = useState([]);
   const [visited, setVisited] = useState(true);
   function isVisited() {
     setVisited(!visited);
@@ -24,6 +23,12 @@ const Country = ({ country }) => {
         <div className="card-actions">
           <button onClick={isVisited} className="btn btn-primary">
             {visited ? "Is Visited" : "Remove"}
+          </button>
+          <button
+            onClick={() => handleVisitedCountry(country)}
+            className="btn btn-primary"
+          >
+            Visited Country
           </button>
         </div>
       </div>
