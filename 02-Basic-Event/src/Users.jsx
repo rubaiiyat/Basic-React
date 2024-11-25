@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import User from "./User";
 
 export default function Users() {
   const [users, setUsers] = useState([]);
@@ -12,6 +13,12 @@ export default function Users() {
   return (
     <>
       <h1>Users: {users.length}</h1>
+
+      <div className="flex flex-wrap gap-5 mt-5 justify-center item-center">
+        {users.map((user) => (
+          <User user={user}></User>
+        ))}
+      </div>
     </>
   );
 }
