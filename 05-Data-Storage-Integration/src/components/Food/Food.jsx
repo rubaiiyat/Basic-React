@@ -1,4 +1,4 @@
-const Food = ({ food }) => {
+const Food = ({ food, addToCart }) => {
   const { name, image, cookTimeMinutes, rating } = food;
   return (
     <div>
@@ -11,7 +11,9 @@ const Food = ({ food }) => {
           <p>Price: ${cookTimeMinutes}</p>
           <p>Rating: {rating}</p>
           <div className="card-actions ">
-            <button className="btn btn-primary">Add To Cart</button>
+            <button onClick={() => addToCart(food)} className="btn btn-primary">
+              Add To Cart
+            </button>
           </div>
         </div>
       </div>
