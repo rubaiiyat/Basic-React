@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import Food from "../Food/Food";
 
 const Foods = () => {
   const [foods, setFoods] = useState([]);
@@ -10,11 +11,13 @@ const Foods = () => {
       .then((data) => setFoods(data.recipes));
   }, []);
 
-  console.log(foods);
-
   return (
     <div>
-      <div>{foods.map((food) => console.log(food))}</div>
+      <div className="flex flex-wrap gap-10 item-center justify-center mt-5">
+        {foods.map((food) => (
+          <Food key={food.id} food={food}></Food>
+        ))}
+      </div>
     </div>
   );
 };
