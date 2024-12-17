@@ -4,9 +4,38 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Todo from "./Todo";
 import Actor from "./Actor";
+import Singers from "./Singers";
 
 function App() {
   const actors = ["Ananta", "Jayed khan", "Hero Alam", "Sakib khan"];
+
+  const people = [
+    {
+      name: "John Doe",
+      age: 25,
+      musicGenre: "Rock",
+    },
+    {
+      name: "Jane Smith",
+      age: 30,
+      musicGenre: "Jazz",
+    },
+    {
+      name: "Alice Johnson",
+      age: 22,
+      musicGenre: "Pop",
+    },
+    {
+      name: "Bob Brown",
+      age: 28,
+      musicGenre: "Hip-Hop",
+    },
+    {
+      name: "Emily Davis",
+      age: 35,
+      musicGenre: "Classical",
+    },
+  ];
   return (
     <>
       <Products name="Mobile" price="200"></Products>
@@ -22,6 +51,12 @@ function App() {
       {actors.map((actor) => (
         <Actor name={actor}></Actor>
       ))}
+
+      <div className="flex justify-center">
+        {people.map((singer) => (
+          <Singers singer={singer}></Singers>
+        ))}
+      </div>
     </>
   );
 }

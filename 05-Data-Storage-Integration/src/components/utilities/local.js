@@ -1,7 +1,7 @@
 const getStoredCard = () => {
   const storedCartString = localStorage.getItem("cart");
   if (storedCartString) {
-    return JSON.parse();
+    return JSON.parse(storedCartString);
   }
 
   return [];
@@ -15,6 +15,8 @@ const savedCartToLS = (cart) => {
 const addToLS = (id) => {
   const cart = getStoredCard();
   cart.push(id);
+
+  savedCartToLS(cart);
 };
 
-export { addToLS, savedCartToLS };
+export { addToLS };

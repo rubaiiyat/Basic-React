@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import Food from "../Food/Food";
+import { addToLS } from "../utilities/local";
 
 const Foods = () => {
   const [foods, setFoods] = useState([]);
@@ -15,7 +16,25 @@ const Foods = () => {
   const addToCart = (food) => {
     const newCart = [...cart, food];
     setCart(newCart);
+    addToLS(food);
   };
+
+  /*   useEffect(() => {
+    if (foods.length) {
+      const storedCart = getStoredCart();
+      const savedCart = [];
+
+      for (const id of storedCart) {
+        const food = foods.find((food) => food.id === id);
+
+        if (food) {
+          savedCart.push(food);
+        }
+      }
+
+      console.log(savedCart);
+    }
+  }, [foods]); */
 
   console.log(cart);
   return (
