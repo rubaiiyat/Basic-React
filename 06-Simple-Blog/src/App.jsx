@@ -1,9 +1,12 @@
 import "./App.css";
+import Header from "./Header/Header";
+import Posts from "./Posts/Posts";
 
 function App() {
   return (
     <>
-      <h1 className="text-2xl ">This is Working</h1>
+      <Header></Header>
+      <Posts></Posts>
     </>
   );
 }
