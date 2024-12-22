@@ -7,16 +7,25 @@ import Posts from "./Posts/Posts";
 function App() {
   const [bookmarks, setBookmarks] = useState([]);
 
-  const addBookmarkBtn = (post) => {
+  const [readTime, setReadTime] = useState(0);
+
+  const addBookmarkBtn = (post, read_time) => {
     const newBookmarks = [...bookmarks, post];
     setBookmarks(newBookmarks);
+
+    const newreadTime = parseInt(readTime) + parseInt(read_time);
+
+    setReadTime(newreadTime);
   };
+
+  console.log(readTime);
+
   return (
     <>
       <Header></Header>
       <div className="flex justify-evenly items-start">
         <Posts addBookmarkBtn={addBookmarkBtn}></Posts>
-        <Bookmarks bookmarks={bookmarks}></Bookmarks>
+        <Bookmarks readTime={readTime} bookmarks={bookmarks}></Bookmarks>
       </div>
     </>
   );

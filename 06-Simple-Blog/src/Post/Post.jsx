@@ -41,7 +41,7 @@ const Post = ({ post, addBookmarkBtn }) => {
 
           <button
             className="flex items-center gap-2 hover:text-white"
-            onClick={() => addBookmarkBtn(post)}
+            onClick={() => addBookmarkBtn(post, read_time)}
           >
             <h1>{read_time} min read </h1>
             <p className="text-red-500">
