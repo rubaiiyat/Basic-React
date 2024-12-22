@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Post from "../Post/Post";
-const Posts = () => {
+const Posts = ({ addBookmarkBtn }) => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -10,9 +10,9 @@ const Posts = () => {
   }, []);
 
   return (
-    <div>
+    <div className="">
       {posts.map((post) => (
-        <Post key={post.id} post={post}></Post>
+        <Post key={post.id} post={post} addBookmarkBtn={addBookmarkBtn}></Post>
       ))}
     </div>
   );

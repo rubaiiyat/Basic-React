@@ -3,7 +3,7 @@ import { FaBookmark, FaEye } from "react-icons/fa";
 import { FcLike } from "react-icons/fc";
 import { AiFillDislike } from "react-icons/ai";
 
-const Post = ({ post }) => {
+const Post = ({ post, addBookmarkBtn }) => {
   const {
     image_url,
     title,
@@ -20,7 +20,7 @@ const Post = ({ post }) => {
 
   return (
     <div>
-      <div className="m-10 p-10  w-5/12 rounded-2xl  bg-gray-900  ">
+      <div className="m-10 p-10 w-8/12  rounded-2xl  bg-gray-900  ">
         <img className="rounded-2xl" src={image_url} alt="" />
 
         <div className="mt-5 flex items-center justify-between">
@@ -39,7 +39,10 @@ const Post = ({ post }) => {
             </div>
           </div>
 
-          <button className="flex items-center gap-2 hover:text-white">
+          <button
+            className="flex items-center gap-2 hover:text-white"
+            onClick={addBookmarkBtn}
+          >
             <h1>{read_time} min read </h1>
             <p className="text-red-500">
               {"  "}
@@ -51,6 +54,14 @@ const Post = ({ post }) => {
         <div className="mt-3">
           <h1 className="text-2xl font-bold text-white">{title}</h1>
           <p>{details}</p>
+        </div>
+
+        <div>
+          {tags.map((tag, index) => (
+            <span className="text-blue-500" key={index}>
+              #{tag}{" "}
+            </span>
+          ))}
         </div>
 
         <div className="mt-2 flex gap-5 items-center">
