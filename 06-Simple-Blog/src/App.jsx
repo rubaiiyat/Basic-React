@@ -1,21 +1,22 @@
 import { useState } from "react";
 import "./App.css";
-import Bookmark from "./Bookmark/Bookmark";
+import Bookmarks from "./Bookmarks/Bookmarks";
 import Header from "./Header/Header";
 import Posts from "./Posts/Posts";
 
 function App() {
-  const [bookmark, setBookmark] = useState([]);
+  const [bookmarks, setBookmarks] = useState([]);
 
-  const addBookmarkBtn = (blog) => {
-    console.log("working");
+  const addBookmarkBtn = (post) => {
+    const newBookmarks = [...bookmarks, post];
+    setBookmarks(newBookmarks);
   };
   return (
     <>
       <Header></Header>
-      <div className="mx-20 flex ">
+      <div className="flex justify-evenly items-start">
         <Posts addBookmarkBtn={addBookmarkBtn}></Posts>
-        <Bookmark></Bookmark>
+        <Bookmarks bookmarks={bookmarks}></Bookmarks>
       </div>
     </>
   );

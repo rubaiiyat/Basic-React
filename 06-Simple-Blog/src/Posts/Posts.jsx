@@ -10,7 +10,7 @@ const Posts = ({ addBookmarkBtn }) => {
   }, []);
 
   return (
-    <div className="">
+    <div className="w-6/12">
       {posts.map((post) => (
         <Post key={post.id} post={post} addBookmarkBtn={addBookmarkBtn}></Post>
       ))}

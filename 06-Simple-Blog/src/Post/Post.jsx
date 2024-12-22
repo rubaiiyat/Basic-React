@@ -20,7 +20,7 @@ const Post = ({ post, addBookmarkBtn }) => {
 
   return (
     <div>
-      <div className="m-10 p-10 w-8/12  rounded-2xl  bg-gray-900  ">
+      <div className="m-10 p-10 rounded-2xl  bg-gray-900  ">
         <img className="rounded-2xl" src={image_url} alt="" />
 
         <div className="mt-5 flex items-center justify-between">
@@ -41,7 +41,7 @@ const Post = ({ post, addBookmarkBtn }) => {
 
           <button
             className="flex items-center gap-2 hover:text-white"
-            onClick={addBookmarkBtn}
+            onClick={() => addBookmarkBtn(post)}
           >
             <h1>{read_time} min read </h1>
             <p className="text-red-500">
